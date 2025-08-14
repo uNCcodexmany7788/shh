@@ -1,25 +1,14 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Pixeluted/adoniscries/main/Source.lua", true))()
 
--- Function to modify tool attributes safely (check both Backpack and equipped tools)
-local function modifyToolAttributes(toolName, attributes)
-    local player = game.Players.LocalPlayer
-    local tool = player.Backpack:FindFirstChild(toolName) or player.Character:FindFirstChild(toolName)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/fcsdsss/games/refs/heads/main/kickbypass"))()
 
-    if tool then
-        for attribute, value in pairs(attributes) do
-            tool:SetAttribute(attribute, value)
-        end
-        print(toolName .. " attributes have been set.")
-    else
-        print(toolName .. " not found in the Backpack or equipped.")
-    end
+if not game:IsLoaded() then
+    game.Loaded:Wait()
 end
 
-local Tab = Window:CreateTab("Fun Stuffz", 0)
-
-local Section1 = Tab:CreateSection("Sword")
-Tab:CreateParagraph({Title = "Sword", Content = "Parry go BRRR"})
-
+if not syn or not protectgui then
+    getgenv().protectgui = function() end
+end
 -- Button for Modded Sword
 Tab:CreateButton({
 	Name = "Modded Sword",
